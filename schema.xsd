@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+    
+    <xs:element name="strona">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="naglowek" type="naglowekType" maxOccurs="1"/>
+                <xs:element name="glowny" type="glownyType" maxOccurs="1"/>
+                <xs:element name="stopka" type="stopkaType" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+        <xs:complexType name="naglowekType">
+            <xs:sequence>
+                <xs:element name="logo" maxOccurs="unbounded">
+                     <xs:complexType>
+                         <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                    <xs:attribute name="zrodlo" type="zrodloType"/>
+                                </xs:extension>
+                            </xs:simpleContent>
+                    </xs:complexType>  
+                </xs:element>
+                <xs:element name="tytul" type="tytulType" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType> 
+       
+        <xs:complexType name="glownyType">
+            <xs:sequence>
+                <xs:element name="menu" type="menuType" maxOccurs="1"/>
+                <xs:element name="zawartosc" type="zawartoscType" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    
+        <xs:complexType name="menuType">
+            <xs:sequence>
+                <xs:element name="wybor" type="wyborType" maxOccurs="unbounded"/>
+                <xs:element name="podwybor" type="wyborType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    
+        <xs:complexType name="wyborType">
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="podstrona" type="zrodloType"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+           
+        <xs:complexType name="zawartoscType">
+            <xs:sequence>
+                <xs:element name="lewy" type="lewyType" maxOccurs="1"/>
+                <xs:element name="prawy" type="prawyType" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="lewyType">
+            <xs:sequence>
+                <xs:element ref="podtytul"/>
+                <xs:element name="tekst" type="dlugiTekst"/>
+                <xs:element ref="zdjecie" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+ 
+        <xs:complexType name="prawyType">
+            <xs:sequence>
+                <xs:element ref="zdjecie"/>
+                <xs:element name="panel" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="podtytul"/>
+                            <xs:element ref="zdjecie"/>
+                            <xs:element ref="odnosnik"/>
+                            <xs:element name="tekst" type="dlugiTekst"/>
+                        </xs:sequence>
+                    <xs:attribute ref="id" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="mecz" type="meczType" maxOccurs="2"/>
+                <xs:element name="pilkarz" type="pilkarzType" maxOccurs="3"/>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <xs:complexType name="meczType" mixed="true">
+            <xs:group ref="meczGrupa"/>
+            <xs:attribute ref="id" use="required" />
+        </xs:complexType>
+        
+        <xs:complexType name="pilkarzType" mixed="true">
+            <xs:sequence>
+                <xs:element name="nagroda" type="nagrodaType" maxOccurs="1"/>
+                <xs:element ref="zdjecie"/>
+                <xs:element name="kontrakt" type="kontraktType"/>
+            </xs:sequence>
+            <xs:attribute name="nazwisko" type="nazwiskaPilkarzy"/>
+        </xs:complexType>
+        
+        <xs:complexType name="nagrodaType">
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="miesiac" type="miesiacType"/>
+                </xs:extension>
+            </xs:simpleContent> 
+        </xs:complexType>
+        
+        <xs:simpleType name="nazwiskaPilkarzy">
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="ziyech"/>
+                <xs:enumeration value="mendy"/>
+                <xs:enumeration value="chilwell"/>
+            </xs:restriction>
+        </xs:simpleType>
+        
+        <xs:complexType name="kontraktType">
+            <xs:simpleContent>
+                <xs:extension base="xs:date">
+                    <xs:attribute name="wazny" type="xs:boolean"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+        
+        <xs:simpleType name="miesiacType">
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="listopad"/>
+                <xs:enumeration value="pazdziernik"/>
+                <xs:enumeration value="wrzesien"/>
+            </xs:restriction>
+        </xs:simpleType>
+        
+        <xs:complexType name="stopkaType" >
+            <xs:sequence>
+                <xs:element name="podpis">
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element name="adnotacja" type="xs:string"/>
+                            <xs:element name="zastrzezenie" type="xs:string"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element ref="odnosnik" maxOccurs="unbounded"/>
+                <xs:element name="ikona" type="ikonaType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <xs:complexType name="ikonaType">
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="zrodlo" type="zrodloType"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+        
+        <xs:element name="dlugoscStringow">
+            <xs:simpleType>
+                <xs:union memberTypes="dlugiTekst krotkiTekst"/>
+            </xs:simpleType>
+        </xs:element>
+        
+        <xs:simpleType name="dlugiTekst">
+            <xs:restriction base="xs:string">
+                <xs:minLength value="10"/>
+            </xs:restriction>
+        </xs:simpleType>
+        
+        <xs:simpleType name="krotkiTekst">
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="30"/>
+            </xs:restriction>
+        </xs:simpleType>
+    
+        <xs:simpleType name="tytulType">
+            <xs:restriction base="xs:string">
+                <xs:length value="14"/>
+            </xs:restriction>
+        </xs:simpleType>
+        
+        <xs:simpleType name="zrodloType">
+            <xs:restriction base="xs:anyURI">
+                <xs:maxLength value="100"/>
+            </xs:restriction>
+        </xs:simpleType>
+        
+        <xs:element name="podtytul" type="podtytulType"/>
+    
+        <xs:simpleType name="podtytulType">
+                <xs:list itemType="xs:string"/>
+        </xs:simpleType>
+     
+        <xs:element name="zdjecie" type="zdjecieType"/>
+        <xs:complexType name="zdjecieType">
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="zrodlo" type="zrodloType"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+        
+        <xs:element name="odnosnik" type="odnosnikType"/>
+        <xs:complexType name="odnosnikType">
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="cel" type="zrodloType"/>
+                </xs:extension>
+            </xs:simpleContent>  
+        </xs:complexType>
+        
+            <xs:attribute name="id">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:pattern value="[0-9]"/>
+                        <xs:minInclusive value="1"/>
+                    </xs:restriction>   
+                </xs:simpleType>
+            </xs:attribute>
+
+        <xs:group name="meczGrupa">
+            <xs:sequence>
+                <xs:element ref="podtytul"/>
+                <xs:element name="tekst" type="dlugiTekst"/>
+                <xs:element ref="zdjecie" maxOccurs="2"/>
+                <xs:element name="podpis">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="15"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="data" type="xs:dateTime"/>
+            </xs:sequence>
+        </xs:group>
+
+</xs:schema>

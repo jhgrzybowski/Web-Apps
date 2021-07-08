@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="strona">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="naglowek">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="logo">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="zrodlo" type="xs:string" use="required" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="tytul" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="glowny">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="menu">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" name="wybor">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="podstrona" type="xs:string" use="optional" />
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="unbounded" name="podwybor">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="podstrona" type="xs:string" use="required" />
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="zawartosc">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="lewy">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="podtytul" type="xs:string" />
+													<xs:element name="tekst" type="xs:string" />
+													<xs:element maxOccurs="unbounded" name="zdjecie">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:string">
+																	<xs:attribute name="zrodlo" type="xs:string" use="required" />
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="prawy">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="zdjecie">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:string">
+																	<xs:attribute name="zrodlo" type="xs:string" use="required" />
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element maxOccurs="unbounded" name="panel">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="podtytul" type="xs:string" />
+																<xs:element name="zdjecie">
+																	<xs:complexType>
+																		<xs:simpleContent>
+																			<xs:extension base="xs:string">
+																				<xs:attribute name="zrodlo" type="xs:string" use="required" />
+																			</xs:extension>
+																		</xs:simpleContent>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="odnosnik">
+																	<xs:complexType>
+																		<xs:simpleContent>
+																			<xs:extension base="xs:string">
+																				<xs:attribute name="cel" type="xs:string" use="required" />
+																			</xs:extension>
+																		</xs:simpleContent>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="tekst" type="xs:string" />
+															</xs:sequence>
+															<xs:attribute name="id" type="xs:unsignedByte" use="required" />
+														</xs:complexType>
+													</xs:element>
+													<xs:element maxOccurs="unbounded" name="mecz">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="podtytul" type="xs:string" />
+																<xs:element name="tekst" type="xs:string" />
+																<xs:element maxOccurs="unbounded" name="zdjecie">
+																	<xs:complexType>
+																		<xs:simpleContent>
+																			<xs:extension base="xs:string">
+																				<xs:attribute name="zrodlo" type="xs:string" use="required" />
+																			</xs:extension>
+																		</xs:simpleContent>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="podpis" type="xs:string" />
+																<xs:element name="data" type="xs:dateTime" />
+															</xs:sequence>
+															<xs:attribute name="id" type="xs:unsignedByte" use="required" />
+														</xs:complexType>
+													</xs:element>
+													<xs:element maxOccurs="unbounded" name="pilkarz">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="nagroda">
+																	<xs:complexType>
+																		<xs:simpleContent>
+																			<xs:extension base="xs:string">
+																				<xs:attribute name="miesiac" type="xs:string" use="required" />
+																			</xs:extension>
+																		</xs:simpleContent>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="zdjecie">
+																	<xs:complexType>
+																		<xs:simpleContent>
+																			<xs:extension base="xs:string">
+																				<xs:attribute name="zrodlo" type="xs:string" use="required" />
+																			</xs:extension>
+																		</xs:simpleContent>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="kontrakt">
+																	<xs:complexType>
+																		<xs:simpleContent>
+																			<xs:extension base="xs:date">
+																				<xs:attribute name="wazny" type="xs:boolean" use="required" />
+																			</xs:extension>
+																		</xs:simpleContent>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="nazwisko" type="xs:string" use="required" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="stopka">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="podpis">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="adnotacja" type="xs:string" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+							<xs:element maxOccurs="unbounded" name="odnosnik">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="cel" type="xs:string" use="required" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" name="ikona">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="zrodlo" type="xs:string" use="required" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

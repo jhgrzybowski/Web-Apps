@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <!ELEMENT strona (naglowek, glowny, stopka)>
+    <!ELEMENT naglowek (logo+, tytul)>
+    <!ELEMENT logo (#PCDATA)>
+    <!ELEMENT tytul (#PCDATA)>
+    <!ATTLIST logo zrodlo CDATA #IMPLIED>
+   
+    <!ELEMENT glowny (menu, zawartosc)>
+
+    <!ELEMENT menu (wybor+, podwybor+)>
+    <!ELEMENT wybor (#PCDATA)>
+    <!ELEMENT podwybor (#PCDATA)>
+    <!ATTLIST wybor podstrona CDATA #IMPLIED> 
+    <!ATTLIST podwybor podstrona CDATA #REQUIRED>
+
+    <!ELEMENT zawartosc (lewy, prawy)>
+
+    <!ELEMENT lewy (podtytul, tekst, zdjecie+)>
+
+    <!ELEMENT podtytul (#PCDATA)>
+    <!ELEMENT tekst (#PCDATA)>
+    <!ELEMENT zdjecie (#PCDATA)>
+    <!ATTLIST zdjecie zrodlo CDATA #REQUIRED>
+
+    <!ELEMENT prawy (zdjecie, panel+, mecz+, pilkarz+)>
+    <!ATTLIST panel id (1|2|3) #REQUIRED>
+    <!ATTLIST mecz id CDATA "1">
+    <!ATTLIST pilkarz nazwisko CDATA #REQUIRED>
+
+    <!ELEMENT panel (podtytul, zdjecie, odnosnik, tekst)>
+    <!ELEMENT odnosnik (#PCDATA)>
+    <!ATTLIST odnosnik cel CDATA #REQUIRED>
+    
+    <!ENTITY % mecz_once1 "podtytul, tekst">
+    <!ENTITY % mecz_once2 "podpis, data">
+    <!ENTITY % mecz_more_than_once "zdjecie+">
+    
+    <!ELEMENT mecz (%mecz_once1;, %mecz_more_than_once;, %mecz_once2;)>
+    <!ELEMENT podpis (#PCDATA)>
+    <!ELEMENT data (#PCDATA)>
+  
+    <!ELEMENT pilkarz ((nagroda|zdjecie), (nagroda|zdjecie), kontrakt)>
+    <!ELEMENT nagroda (#PCDATA)>
+    <!ELEMENT kontrakt (#PCDATA)>
+    <!ATTLIST nagroda miesiac CDATA #REQUIRED>
+    <!ATTLIST kontrakt wazny CDATA #REQUIRED>
+    <!ENTITY data1 "2023-07-01">
+    <!ENTITY data2 "2025-10-10">
+    <!ENTITY data3 "2024-06-01">
+    
+    <!ELEMENT stopka (podpis, odnosnik+, ikona+)>
+    <!ELEMENT ikona (#PCDATA)>
+    <!ATTLIST ikona zrodlo CDATA #REQUIRED>

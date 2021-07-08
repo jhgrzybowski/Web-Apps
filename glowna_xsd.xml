@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strona xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="schema.xsd">
+<naglowek>
+        <logo zrodlo="logo.png">Chelsea</logo>
+        <logo zrodlo="logo2.png">Premier League</logo>
+        <tytul>The Blues Zone</tytul>
+    </naglowek>
+    <glowny>
+        <menu>
+            <wybor podstrona="index.html">Główna</wybor>
+            <wybor podstrona="galeria.html">Galeria</wybor>
+            <wybor podstrona="info.html">Informacje</wybor>
+            <wybor>Mecze</wybor>
+                <podwybor podstrona="pl.html">Premier League</podwybor>
+                <podwybor podstrona="lm.html">Liga Mistrzów</podwybor>
+        </menu>
+        <zawartosc>
+            <lewy>
+                <podtytul>Strefa fanów Chelsea London</podtytul>
+                <tekst>Witajcie wszyscy bardzo gorąco na stronie internetowej poświęconej mojemu ulubionemu klubowi - Chelsea London Football Club.Jestem fanem klubu od 2012 kiedy to Niebiescy sięgneli po zwycięstwo Ligi Mistrzów w niesamowitym stylu w starciu z Bayernem Monachium. Pokazali wówczas poświęcenie i walkę do końca, każdy zawodnik zostawił serce na boisku i do dzisiaj przywołuje się ten spektakularny finał. Wielką rolę tego wieczora w Monachium odegrał Didier Drogba, który zdobył wyrównującą bramkę głową pod koniec spotkania, a następnie wykorzystał swój strzał w serii rzutów karnych rozstrzygających losy spotkania. Od tamtego momentu interesuje się losami klubu oraz wiernie kibicuje drużynie podczas potyczek w Lidze Angielskiej i kolejnych edycjach Ligi Mistrzów.
+                Szanse na Mistrzostwo
+                Sezon dla The Blues zaczyna wyglądać całkiem przyzwoicie. Zespół zajmuje trzecie miejsce w Premier League oraz jest liderem swojej grupy w Lidze Mistrzów. To jeszcze za wcześnie na spekulacje o ostatecznych trymufach, ale Chelsea na pewno będzie chciała potwierdzić swoją jakość i wygrać jakiś tytuł w tym sezonie. Na ostatniej konferencji prasowej zapytano Masona Mount'a o jego opinie dotyczące trwających rozgrywek. Oto zapis rozmowy.
+                Chelsea może wygrać tytuł? – To zawsze był nasz cel. Nie możemy być zadowoleni z tego, że znajdujemy się w czołówce. Wiemy co możemy osiągnąć i powinniśmy dążyć do tytułów. Musimy utrzymać dobrą formę i w każdym spotkaniu dawać z siebie wszystko. Nie możemy jednak wybiegać myślami tak daleko przed siebie. Nowi zawodnicy pomogli wejść na wyższy poziom?– Dla mnie standardem jest to, aby wraz z nowym sezonem oczekiwać od siebie jeszcze więcej niż w poprzednim. Klub pozyskał nowych piłkarzy i wiemy, że możemy osiągnąć wiele. Wspaniale jest mieć tych wszystkich nowych graczy. Uczymy się od siebie wzajemnie, każdy z nowych nabytków może coś wnieść do tej drużyny.
+                Sytuacja kadrowa przed meczem w Lidze Mistrzów
+                Chelsea przygotowuje się na kolejne spotkanie w ramach Ligi Mistrzów. Będzie to drugi mecz z francuskim Rennes. Kogo do dyspozycji będzie miał Frank Lampard? W sobotnie popołudnie Chelsea odniosła kolejne, pewne zwycięstwo. Tym razem po bramce samobójczej oraz trafieniu Abrahama pokonali Newcastle. Na to spotkanie Kai Havertz, Christian Pulisic oraz Thiago Silva byli niezdolni do gry. Czy będą gotowi na mecz z Rennes? Thiago Silva 36-letni Brazylijczyk nie był dostępny z powodu długiej podróży na zgrupowanie reprezentacji Brazylii. Sytuację skomentował Frank Lampard. – Podróżował z Południowej Ameryki. To była bardzo długa podróż, więc myślę, że postąpiliśmy dobrze. Mamy kilku środkowych obrońców, Toni Rudiger wszedł do składu, więc chcesz, aby piłkarze trzymali odpowiedni poziom. – Thiago podniósł poziom gry naszej obrony, jednak po każdym meczu musimy mu się przyglądać z powodu na jego wiek. Silva prawdopodobnie będzie już dostępny na wtorkowe spotkanie Ligi Mistrzów. Christian Pulisic 22-latek nadal zmaga się z kontuzją, której nabawił się podczas rozgrzewki przed meczem z Burnley. Pulisic został powołany do reprezentacji USA, jednak po kilku dniach powrócił do Cobham. Christian wznowił już treningi na których dobrze sobie radzi, jednak nie zobaczymy go w spotkaniu przeciwko Rennes. Kai Havertz Z powodu pozytywnego testu na COVID-19, Kai opuścił sobotni mecz. Jednak całkiem prawdopodobne jest, że złapie kilka minut w jutrzejszym meczu. – Liczę, że będę mógł z niego skorzystać. Trenuje od dwóch czy trzech dni i wygląda całkiem dobrze. Kai jest wysportowanym mężczyzną. Mam nadzieję, że poleci z nami na mecz z Rennes. – Może otrzyma kilka minut, jednak nie wiem jak dużo. Przez dwa tygodnie był w domowej izolacji, ale wygląda, że jest w dobrej formie.</tekst>
+                <zdjecie zrodlo="img/team3.jpg">Drużyna</zdjecie>
+                <zdjecie zrodlo="img/mason.jpg">Mason Mount</zdjecie>
+            </lewy>
+            <prawy>
+                <zdjecie zrodlo="img/druzyna.jpg">Drużyna</zdjecie>
+                <panel id="1">
+                    <podtytul>LIGA MISTRZÓW</podtytul>
+                    <zdjecie zrodlo="img/cl.jpg">Champions League</zdjecie>
+                    <odnosnik cel="lm.html">lm</odnosnik>
+                    <tekst>MIEJSCE W GRUPIE: 1 REZULTAT: W W R</tekst>
+                </panel>
+                <panel id="2">
+                    <podtytul>PREMIER LEAGUE</podtytul>
+                    <zdjecie zrodlo="img/pl.png">Premier League</zdjecie>
+                    <odnosnik cel="pl.html">pl</odnosnik>
+                    <tekst>MIEJSCE W LIDZE: 3 REZULTAT: W W W R R</tekst>
+                </panel>
+                
+                <mecz id="1">
+                    <podtytul>MECZ CL</podtytul>
+                    <tekst>NASTĘPNE SPOTKANIE W LIDZE MISTRZÓW</tekst>
+                    <zdjecie zrodlo="img/logo.png">Chelsea</zdjecie>
+                    <zdjecie zrodlo="img/logo3.png">Rennes</zdjecie>
+                    <podpis>Chelsea - Rennes | Roazhon Park</podpis>
+                    <data>2020-11-24T18:55:00</data>
+                </mecz>
+                 <mecz id="2">
+                    <podtytul>MECZ PL</podtytul>
+                    <tekst>NASTĘPNE SPOTKANIE W PREMIER LEAGUE</tekst>
+                    <zdjecie zrodlo="img/logo.png">Chelsea</zdjecie>
+                    <zdjecie zrodlo="img/logo4.png">Tottenham</zdjecie>
+                    <podpis>Chelsea - Tottenham | Stamford  Bridge</podpis>
+                    <data>2020-11-29T17:30:00</data>
+                </mecz>
+                
+                <pilkarz nazwisko="ziyech">
+                    <nagroda miesiac="listopad">PIŁKARZ LISTOPADA</nagroda>
+                    <zdjecie zrodlo="img/hakim.png">Hakim Ziyech</zdjecie>
+                    <kontrakt wazny="true">2023-07-01</kontrakt>
+                </pilkarz>
+                <pilkarz nazwisko="mendy">
+                    <nagroda miesiac="pazdziernik">PIŁKARZ PAŹDZIERNIKA</nagroda>
+                    <zdjecie zrodlo="img/ed.png">Edouard Mendy</zdjecie>
+                    <kontrakt wazny="true">2025-10-10</kontrakt>
+                </pilkarz>
+                <pilkarz nazwisko="chilwell">
+                    <nagroda miesiac="wrzesien">PIŁKARZ WRZEŚNIA</nagroda>
+                    <zdjecie zrodlo="img/ben.png">Ben Chilwell</zdjecie>
+                    <kontrakt wazny="true">2024-06-01</kontrakt>
+                </pilkarz> 
+            </prawy>
+        </zawartosc>
+    </glowny>
+    <stopka>
+        <podpis><adnotacja>Jakub Grzybowski 2020 Wszystkie prawa zastrzeżone strona wykonana na potrzebe projektu HiH</adnotacja></podpis>
+        <odnosnik cel="#naglowek">Przejście do góry</odnosnik>
+        <odnosnik cel="https://www.facebook.com/ChelseaFC/">fb</odnosnik>
+        <odnosnik cel="https://www.instagram.com/chelseafc/">ig</odnosnik>
+        <odnosnik cel="https://www.twitter.com/chelseafc/">twitter</odnosnik>
+        <ikona zrodlo="img/up.png">up</ikona>
+        <ikona zrodlo="img/fb.svg">Facebook</ikona>
+        <ikona zrodlo="img/ig.svg">Instagram</ikona>
+        <ikona zrodlo="img/twitter.svg">Twitter</ikona>
+    </stopka>
+</strona>
